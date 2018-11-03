@@ -36,7 +36,7 @@ elseif ( strlen($pass) < 8 ){
      echo " Password must be at least 8 character !<br>";
  }
  else {
-     echo " The Password is Correct<br>";
+     echo " The Password is : $pass <br>";
  }
 
 //Goodbye Message

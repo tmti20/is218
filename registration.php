@@ -1,3 +1,12 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body >
+<fieldset   class="F1">
+
 <?php
 // Welcome message
 echo " <b>Welcome</b> <br> ";
@@ -62,3 +71,8 @@ else {
 echo "<br><b>Have a good day !!</b><br>";
 
 ?>
+
+
+</fieldset>
+</body>
+</html>

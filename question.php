@@ -1,3 +1,13 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body >
+<fieldset   class="F1">
+
+
 <?php
 //Welcome Message
 echo " <b>Welcome</b> <br> ";
@@ -35,9 +45,17 @@ else {
 
 // Conditions Question Skills Here
 if ( $array_count >=2){
-        echo "Here is the Question Skills     : " . implode(',', $skill_array);
+        echo "Here is the Question Skills: ";
+        print_r ($skill_array);
+    }
+    else{
+        echo "Enter at least 2 skills";
     }
 //Goodbye message
 echo "<br><b>Have a good day !!</b><br>";
 
 ?>
+
+</fieldset>
+</body>
+</html>
