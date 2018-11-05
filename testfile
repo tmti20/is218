@@ -1,0 +1,31 @@
+<?php
+
+//connect to the database
+echo "<h1>PDO demo!</h1>";
+$username = 'ti36';
+$password = 'fQ8f50AMO';
+$hostname = 'sql2.njit.edu';
+$dsn = "mysql:host=$hostname;dbname=$username";
+try {
+    $db = new PDO($dsn, $username, $password);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected successfully<br>";
+} catch(PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
+
+//test query
+$product_id = '1';
+echo "%%%%%%%%%%%%%%%%%%%%%%%%%%";
+global $db;
+$query = 'SELECT * FROM products
+              WHERE productID = :product_id';
+$statement = $db->prepare($query);
+$statement->bindValue(":product_id", $product_id);
+$statement->execute();
+$product = $statement->fetch();
+$statement->closeCursor();
+return $product;
+
+//$db = null;
+?>
