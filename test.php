@@ -18,7 +18,7 @@ try {
 //$name = '1';
 echo "%%%%%%%%%%%%%%%%%%%%%%%%%%<br>";
 global $db;
-$query = 'SELECT * FROM account where fname = "Mike"';
+$query = 'SELECT * FROM account where email = "t@gmail.com"';
 $statement = $db->prepare($query);
 //$statement->bindValue(":product_id", $product_id);
 $statement->execute();
