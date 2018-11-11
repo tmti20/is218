@@ -1,9 +1,9 @@
 <?php
 
-$username = 'root';
+$username = '';
 $password = '';
-$hostname = 'localhost';
-$db = "test1";
+$hostname = '';
+$db = "";
 $dsn = "mysql:host=$hostname;dbname=$db";
 try {
     $db = new PDO($dsn, $username, $password);
