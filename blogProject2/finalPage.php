@@ -8,17 +8,20 @@ session_start();
 require "config.php";
 require "function.php";
 
+$email = $_GET ['email'];
+
 // TAKING GREETING MESSAGE FROM FUNCTION
 $greetings = greetings();
 
 // CHECK SESSION LOGIN
-gatekeeper();
+//gatekeeper();
 
 //EMAIL VALUE FORM SESSION
-$email = $_SESSION['email'];
+//$email = $_SESSION['email'];
+//echo $email;
 
 //QUERY TO GET FIRST NAME AND LAST NAME FROM DATABASE
-$query = "SELECT * FROM accounts where email = '$email'";
+$query = "SELECT * FROM account where email = '$email'";
 $results = runQuery($query);
 
 foreach ($results as $result) {
@@ -81,7 +84,7 @@ else {
 
 <div id="id01" class="modal">
 
-    <form class="modal-content animate" action="question.php" method="post">
+    <form class="modal-content animate" action="question.php?email=<?php echo $email?>" method="post">
 
             <br><label> Enter Your Questions</label>
 
@@ -120,7 +123,7 @@ else {
 </script>
 
 <br>
-<form action ="addQuestion.php" method= "post" >
+<form action ="addQuestion.php?email=<?php echo $email?>" method= "post" >
     <input type="submit" value="Add Question(PHP)">
 </form> (Assignment Purpose I added both PHP & JS option )
 

@@ -8,6 +8,7 @@ session_start();
 require "config.php";
 require "function.php";
 
+$email = $_GET['email'];
 // INPUT VALUE FROM QUESTION FORM
 $qname = filter_input(INPUT_POST, 'qname', FILTER_SANITIZE_STRING);
 $qskill = filter_input(INPUT_POST, 'qskill', FILTER_SANITIZE_STRING);
@@ -20,7 +21,7 @@ $skills = implode(",", $skill_array);
 $array_count = count($skill_array);
 
 //$_SESSION['logged']=true;
-$email = $_SESSION['email'];
+//$email = $_SESSION['email'];
 
 //CHECK CONDITIONS FOR TITLE
 function checkTitle($qname){
@@ -65,13 +66,13 @@ function checkBody ($qbody){
 if ( checkTitle($qname) && checkBody ($qbody) && checkSkill($array_count) ){
 
     global $db;
-    $query = "SELECT * FROM accounts where email = '$email'";
+    $query = "SELECT * FROM account where email = '$email'";
     $results = runQuery($query);
 
     foreach ($results as $result) {
         $ownerid = $result['id'];}
     addQuestion($email, $ownerid, $datetime, $qname, $qbody, $skills);
-    redirect(" Question Insert Successfully !! Redirecting to the Blog....... ","finalPage.php");
+    redirect(" Question Insert Successfully !! Redirecting to the Blog....... ","finalPage.php?email=$email");
 }
 ?>
 

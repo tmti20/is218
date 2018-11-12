@@ -1,5 +1,4 @@
 
-
 <?php
 
 // TimeZone, Start greetings
@@ -66,7 +65,7 @@ function runQuery($query) {
 function addUser($email,$fname,$lname,$birth,$pass) {
     global $db;
     try {
-        $query = "insert into accounts (email, fname, lname, birthday, password) values (:email, :fname,:lname,:birth,:pass)";
+        $query = "insert into account (email, fname, lname, birthday, password) values (:email, :fname,:lname,:birth,:pass)";
         $statement = $db->prepare($query);
         $statement->bindValue(':email', $email);
         $statement->bindValue(':fname', $fname);

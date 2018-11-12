@@ -14,8 +14,8 @@ $pass = filter_input(INPUT_POST, 'pass');
 // GETTING GREETING VALUE FOR FUNCITON
 $greetings = greetings();
 //SESSION LOGIN DEFINE & VALUE STORE
-$_SESSION['logged'] = true;
-$_SESSION['email'] = $email;
+//$_SESSION['logged'] = true;
+//$_SESSION['email'] = $email;
 
 
 // CHECKING CONDITIONS FOR EMAIL
@@ -55,7 +55,7 @@ function checkPass ( $pass)
 // CHECKING AUTHENTICATION
 if (checkEmail($email) && checkPass($pass)){
 
-    $query = "select * from accounts where email='$email' and password='$pass'";
+    $query = "select * from account where email='$email' and password='$pass'";
     $results = runQuery($query);
     //GETTING VALUES FROM DATABASE
     foreach ($results as $result) {
@@ -64,7 +64,7 @@ if (checkEmail($email) && checkPass($pass)){
     }
     if(count($results) > 0){
         //USING REDIRECT FUNCTION TO REDIRECT TO NEW PAGE AND PRINT NEW MESSAGE
-        redirect (" <h2>  $greetings $fname $lname <br> <b style=\"color: green; text-align: center \"> Login Successful !! Redirecting to Display Page.... </b> <h2>", "finalPage.php");
+        redirect (" <h2>  $greetings $fname $lname <br> <b style=\"color: green; text-align: center \"> Login Successful !! Redirecting to Display Page.... </b> <h2>", "finalPage.php?email=$email");
     }
     else{
         header("Location: loginFail.php");
@@ -72,8 +72,8 @@ if (checkEmail($email) && checkPass($pass)){
 }
 else
     // TRY AGAIN BUTTON IF IT'S WRONG
-    echo ">
-      </form>\"";
+    echo "<form action =\"loginForm.php\" method= \"post\" >
+          <input type=\"submit\" value=\"BACK\"></form>";
 ?>
 
 <?php include 'footer.php'; ?>

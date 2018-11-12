@@ -96,7 +96,8 @@ input[type="submit"]{
 
 table,td{
     border:1px black solid;
-    alignment: center;
+
+
 }
 .title{
     font-weight:bold;

@@ -1,6 +1,9 @@
 <?php include 'header.php';  ?>
+<?php
+$email = $_GET['email'];
+?>
 
-<form action ="question.php" method= "post">
+<form action ="question.php?email=<?php echo $email;?>" method= "post">
 
         <!-- User Input Question Name -->
         Question Name: <input type = text name = "qname"  id = "user" placeholder="Enter Questions Name "  autofocus ><br>

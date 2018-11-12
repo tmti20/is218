@@ -17,8 +17,8 @@ $email = filter_input( INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 $pass = filter_input(INPUT_POST, 'pass');
 
 //DEFINE SESSSION
-$_SESSION['logged']=true;
-$_SESSION['email'] = $email;
+//$_SESSION['logged']=true;
+//$_SESSION['email'] = $email;
 
 // VALIDATION CHECK FOR FIRST NAME
 function checkFname($fname){
@@ -83,7 +83,7 @@ function checkPass ( $pass)
 //IF EVERY CONDINTION VALID THEM PERFORM THE ACTION HERE
 if ( checkFname($fname) && checkLname($lname) && checkBirth($birth) && checkEmail($email) && checkPass($pass)){
 
-    $query = "select * from accounts where email='$email'";
+    $query = "select * from account where email='$email'";
     $results = runQuery($query);
 
     if(count($results) > 0) {
@@ -101,7 +101,7 @@ if ( checkFname($fname) && checkLname($lname) && checkBirth($birth) && checkEmai
 
     else{
         $results = addUser($email,$fname,$lname,$birth,$pass);
-        redirect (" <h2>  $greetings $fname $lname, <br> <b style=\"color: green; text-align: center \"> Registration Successful !! Redirecting to Display Page..... </b> <h2>", "finalPage.php");
+        redirect (" <h2>  $greetings $fname $lname, <br> <b style=\"color: green; text-align: center \"> Registration Successful !! Redirecting to Display Page..... </b> <h2>", "finalPage.php?email=$email");
     }
 }
 else {
