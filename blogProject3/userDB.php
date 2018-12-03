@@ -3,7 +3,7 @@
 function authentication ($email, $pass){
     global $db;
     try {
-        $query = "select * from accounts where email='$email' and password='$pass'";
+        $query = "select * from account where email='$email' and password='$pass'";
         $q = $db->prepare($query);
         $q->execute();
         $results = $q->fetchAll();
@@ -26,7 +26,7 @@ function authentication ($email, $pass){
 function userFromAccounts ($email){
     global $db;
     try {
-        $query = "select * from accounts where email='$email'";
+        $query = "select * from account where email='$email'";
         $q = $db->prepare($query);
         $q->execute();
         $results = $q->fetchAll();
@@ -42,7 +42,7 @@ function userFromAccounts ($email){
 function addUser($email,$fname,$lname,$birth,$pass) {
     global $db;
     try {
-        $query = "insert into accounts (email, fname, lname, birthday, password) values (:email, :fname,:lname,:birth,:pass)";
+        $query = "insert into account (email, fname, lname, birthday, password) values (:email, :fname,:lname,:birth,:pass)";
         $statement = $db->prepare($query);
         $statement->bindValue(':email', $email);
         $statement->bindValue(':fname', $fname);

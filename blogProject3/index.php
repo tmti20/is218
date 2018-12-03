@@ -1,7 +1,7 @@
 <?php
 
 // DEFINE REQUIRED MODELS/FUNCTIONS
-require('model/config.php');
+require('config.php');
 require('function.php');
 require('userDB.php');
 require('questionDB.php');
@@ -25,7 +25,6 @@ else if ($action == 'login') {
     $email = filter_input( INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
     $pass = filter_input(INPUT_POST, 'pass');
     include('loginValidationCheck.php');
-    $results = authentication ($email, $pass);
     if ($valid && $results ){
         header("Location:?action=finalPage&&email=$email");
     }
@@ -58,6 +57,7 @@ else if ($action == 'registration') {
     $pass = filter_input(INPUT_POST, 'pass');
     include('registrationValidationCheck.php');
     $results = userFromAccounts ($email);
+    echo 'testtttt';
     if ($valid == true) {
 
         if (count($results) > 0) {
@@ -166,7 +166,7 @@ else if ($action == 'deleteQuestion') {
 }
 
 //FINAL DISPLAY PAGE/ QUESTION DISPLAY PAGE
-else if ($action == 'finalPage'){
+else if ($action =='finalPage'){
     $greetings = greetings();
     $email = filter_input( INPUT_GET, 'email', FILTER_SANITIZE_EMAIL);
     $results = userFromAccounts ($email);
