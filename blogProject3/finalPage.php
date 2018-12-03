@@ -3,8 +3,6 @@
 <?php
 //START SESSION
 
-
-
 //session_start();
 //
 ////REQUIRED FILES
@@ -63,10 +61,10 @@ if(count($dataFromQuestions) < 1)
             <form action ="." method= "post" >
                 <input type="hidden" name="action" value="editQuestion">
                 <input type="hidden" name="id" value="<?php echo $questions['id'];?>">
-                <input type="hidden" name="email" value="<?php echo $questions['owneremail'];?>">
-                <input type="hidden" name="title" value="<?php echo $questions['title'];?>">
-                <input type="hidden" name="skills" value="<?php echo $questions['skills'];?>">
-                <input type="hidden" name="body" value="<?php echo $questions['body'];?>">
+<!--                <input type="hidden" name="email" value="--><?php //echo $questions['owneremail'];?><!--">-->
+<!--                <input type="hidden" name="title" value="--><?php //echo $questions['title'];?><!--">-->
+<!--                <input type="hidden" name="skills" value="--><?php //echo $questions['skills'];?><!--">-->
+<!--                <input type="hidden" name="body" value="--><?php //echo $questions['body'];?><!--">-->
                 <input type="submit" value="EDIT">
             </form>
         </td>

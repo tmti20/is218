@@ -1,6 +1,6 @@
 <?php include 'header.php';  ?>
 
-<form action ="../../../../../xampp/htdocs/t/n" method= "post">
+<form action ="." method= "post">
         <input type="hidden" name="action" value="AddQuestion">
         <input type="hidden" name="email" value="<?php echo "$email";?>">
         <!-- User Input Question Name -->
