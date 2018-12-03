@@ -9,7 +9,7 @@ foreach ($dataFromQuestions as $result) {
         $skills = $result['skills'];
     }
 ?>
-<form action =".." method= "post">
+<form action ="" method= "post">
     <input type="hidden" name="action" value="updateQuestion"><br>
      <input type="hidden" name="id" value="<?php echo $id ?>"><br>
     <input type="hidden" name="email" value="<?php echo $email ?>"><br>

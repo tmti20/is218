@@ -2,7 +2,7 @@
 
   <div class='container' align="center">
 
-    <form action=".." method = "POST">
+    <form action="" method = "POST">
 <!--        hidden action-->
         <input type="hidden" name="action" value="login">
         <!-- User Input -->
@@ -14,7 +14,7 @@
     </form>
 
 <!--      USING THIS FORM TO REDIRECT TO REGISTRATION FORM-->
-      <form action =".." method= "post" >
+      <form action ="" method= "post" >
           <input type="hidden" name="action" value="showRegistration">
           <input type="submit" value="REGISTER">
       </form>

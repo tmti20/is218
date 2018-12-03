@@ -31,7 +31,7 @@ else if ($action == 'login') {
     }
     else
         $message= "<br>Wrong USER/PASS !!   TRY AGAIN";
-        include("error.php");
+        include("error/error.php");
 
         //SOME BUTTONS TO REDIRECT
    echo ' <form action ="." method= "post" >
@@ -115,7 +115,7 @@ else if ($action == 'editQuestion') {
     $dataFromQuestions = dataFromQuestionsById ($id);
     if ($id == NULL || $id == FALSE ) {
         $error = "Missing or incorrect product id or category id.";
-        include('error.php');
+        include('error/error.php');
     } else {
         include('editQuestion.php');
     }
@@ -153,7 +153,7 @@ else if ($action == 'deleteQuestion') {
     $email = filter_input( INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
     if ($id == NULL || $id == FALSE || $email == NULL || $email == FALSE ) {
         $error = "Missing or incorrect product id or category id.";
-        include('error.php');
+        include('error/error.php');
     } else {
         deleteQuestion($id);
         header("Location: .?action=finalPage&&email=$email");
