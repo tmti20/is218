@@ -1,10 +1,10 @@
 <?php
 
 // DEFINE REQUIRED MODELS/FUNCTIONS
-require('config.php');
-require('function.php');
-require('userDB.php');
-require('questionDB.php');
+require('model/config.php');
+require('model/function.php');
+require('model/userDB.php');
+require('model/questionDB.php');
 
 //CHECK THE VALUE IF ITS NULL
 $action = filter_input(INPUT_POST, 'action');
@@ -31,7 +31,7 @@ else if ($action == 'login') {
     }
     else
         $message= "<br>Wrong USER/PASS !!   TRY AGAIN";
-        include ("error.php");
+        include("error.php");
 
         //SOME BUTTONS TO REDIRECT
    echo ' <form action ="." method= "post" >
@@ -81,7 +81,7 @@ else if ($action == 'registration') {
 //SHOW ADD QUESTION FORM
 else if ( $action == 'showAddQuestion'){
     $email = filter_input( INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-    include ('addQuestion.php');
+    include('addQuestion.php');
 }
 else if ($action == 'AddQuestion') {
     $qname = filter_input(INPUT_POST, 'qname', FILTER_SANITIZE_STRING);
@@ -117,7 +117,7 @@ else if ($action == 'editQuestion') {
         $error = "Missing or incorrect product id or category id.";
         include('error.php');
     } else {
-        include ('editQuestion.php');
+        include('editQuestion.php');
     }
 }
 
