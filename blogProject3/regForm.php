@@ -1,6 +1,6 @@
 <?php include 'header.php';  ?>
 
-<form action="../../../../../xampp/htdocs/t/n" method = "POST">
+<form action="." method = "POST">
     <input type="hidden" name="action" value="registration">
     <!-- First Name Input -->
     First Name: <input type = text name = "fname"  id = "user" placeholder="Enter First Name "  autofocus ><br>
@@ -18,7 +18,7 @@
 </form>
 
 <!--USING THIS FORM TO REDIRECT TO LOGIN PAGE-->
-<form action ="../../../../../xampp/htdocs/t/n" method= "post" >
+<form action ="." method= "post" >
     <input type="hidden" name="action" value="show_login">
     <input type="submit" value="LOGIN">
 </form>

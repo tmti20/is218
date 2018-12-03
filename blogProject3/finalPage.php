@@ -60,7 +60,7 @@ if(count($dataFromQuestions) < 1)
         <td><?php echo $questions['body'];?></td>
         <td><?php echo $questions['skills'];?></td>
         <td>
-            <form action ="../../../../../xampp/htdocs/t/n" method= "post" >
+            <form action ="." method= "post" >
                 <input type="hidden" name="action" value="editQuestion">
                 <input type="hidden" name="id" value="<?php echo $questions['id'];?>">
                 <input type="hidden" name="email" value="<?php echo $questions['owneremail'];?>">
@@ -71,7 +71,7 @@ if(count($dataFromQuestions) < 1)
             </form>
         </td>
         <td>
-            <form action ="../../../../../xampp/htdocs/t/n" method= "post" >
+            <form action ="." method= "post" >
                 <input type="hidden" name="action" value="deleteQuestion">
                 <input type="hidden" name="id" value="<?php echo $questions['id'];?>">
                 <input type="hidden" name="email" value="<?php echo $questions['owneremail'];?>">
@@ -88,7 +88,7 @@ if(count($dataFromQuestions) < 1)
 
 <div id="id01" class="modal">
 
-    <form class="modal-content animate" action="../../../../../xampp/htdocs/t/n" method="post">
+    <form class="modal-content animate" action="." method="post">
 
             <br><label> Enter Your Questions</label>
 
@@ -104,7 +104,6 @@ if(count($dataFromQuestions) < 1)
             Question Body: <input type = text name = "qbody" rows="5" cols="40" id = "user" placeholder="Enter Question Body" > <br>
             <!-- Submit Button -->
             <input type=submit value="SEND" ><br>
-
         </div>
 
         <div class="container" style="background-color:#f1f1f1">
@@ -127,13 +126,13 @@ if(count($dataFromQuestions) < 1)
 </script>
 
 <br>
-<form action ="../../../../../xampp/htdocs/t/n" method= "post" >
+<form action ="." method= "post" >
     <input type="hidden" name="action" value="showAddQuestion">
     <input type="hidden" name="email" value="<?php echo $email;?>">
     <input type="submit" value="Add Question(PHP)">
 </form> (Assignment Purpose I added both PHP & JS option )
 
-<form action ="../../../../../xampp/htdocs/t/n" method= "post" >
+<form action ="." method= "post" >
     <input type="hidden" name="action" value="logout">
     <input type="submit" value="LOGOUT">
 </form>

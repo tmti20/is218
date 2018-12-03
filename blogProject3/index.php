@@ -34,12 +34,12 @@ else if ($action == 'login') {
         include ("error.php");
 
         //SOME BUTTONS TO REDIRECT
-   echo ' <form action ="../../../../../xampp/htdocs/t/n" method= "post" >
+   echo ' <form action ="." method= "post" >
     <input type="hidden" name="action" value="show_login">
     <input type="submit" value="Try Again">
     </form>
     <br>
-    <form action ="../../../../../xampp/htdocs/t/n" method= "post" >
+    <form action ="." method= "post" >
     <input type="hidden" name="action" value="showRegistration">
     <input type="submit" value="Register">
     </form> ';

@@ -41,7 +41,7 @@ if (empty($birth)) {
 
 ?>
 
-<form action ="../../../../../xampp/htdocs/t/n" method= "post" >
+<form action ="." method= "post" >
     <input type="hidden" name="action" value="show_login">
     <input type="submit" value="Try Again">
 </form>
