@@ -1,7 +1,7 @@
 <?php
 
 // DEFINE REQUIRED MODELS/FUNCTIONS
-require('config.php');
+require('model/config.php');
 require('function.php');
 require('userDB.php');
 require('questionDB.php');
