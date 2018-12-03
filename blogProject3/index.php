@@ -73,7 +73,7 @@ else if ($action == 'registration') {
         }
         else {
             addUser($email, $fname, $lname, $birth, $pass);
-            //header("Location:?action=finalPage&&email=$email");
+//            header("Location:?action=finalPage&&email=$email");
         redirect (" <h2>  $greetings $fname $lname, <br> <b style=\"color: green; text-align: center \"> Registration Successful !! Redirecting to Display Page..... </b> <h2>", "?action=finalPage&&email=$email'");
         }
     }

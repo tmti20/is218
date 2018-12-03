@@ -7,7 +7,7 @@ $dsn = "mysql:host=$hostname;dbname=$username";
 try {
     $db = new PDO($dsn, $username, $password);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully<br>";
+    //echo "Connected successfully<br>";
 }
 catch(PDOException $e)
 {
