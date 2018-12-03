@@ -25,6 +25,7 @@ else if ($action == 'login') {
     $email = filter_input( INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
     $pass = filter_input(INPUT_POST, 'pass');
     include('loginValidationCheck.php');
+    $results = authentication ($email, $pass);
     if ($valid && $results ){
         header("Location:?action=finalPage&&email=$email");
     }
@@ -57,29 +58,23 @@ else if ($action == 'registration') {
     $pass = filter_input(INPUT_POST, 'pass');
     include('registrationValidationCheck.php');
     $results = userFromAccounts ($email);
-    echo 'testtttt';
     if ($valid == true) {
 
         if (count($results) > 0) {
             echo " Email address already registered<br><br>";
 
             // IF EMAIL IS IN THE DATABASE GO BACK OR REGISTER OPTION
-            echo "></form>\"";
 
-            echo '<br>';
-
-            echo ">
-            </form>\"";
         }
         else {
             addUser($email, $fname, $lname, $birth, $pass);
-//            header("Location:?action=finalPage&&email=$email");
-        redirect (" <h2>  $greetings $fname $lname, <br> <b style=\"color: green; text-align: center \"> Registration Successful !! Redirecting to Display Page..... </b> <h2>", "?action=finalPage&&email=$email'");
+            header("Location:?action=finalPage&&email=$email");
+//        redirect (" <h2>  $greetings $fname $lname, <br> <b style=\"color: green; text-align: center \"> Registration Successful !! Redirecting to Display Page..... </b> <h2>", "?action=finalPage&&email=$email'");
         }
     }
     else {
-        echo "></form>\"";
-        redirect(" <h2><b style=\"color: red; text-align: center \"> Registration not Complete </b> <h2>", "?action=finalPage'");
+        echo "test";
+//        redirect(" <h2><b style=\"color: red; text-align: center \"> Registration not Complete </b> <h2>", "?action=finalPage'");
     }
 }
 

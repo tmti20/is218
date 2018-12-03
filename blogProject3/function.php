@@ -31,7 +31,7 @@ if ($time < "12") {
 function redirect($message, $target){
 //Redirect to login page and exit session
     echo $message;
-    $delay = '1';
+    $delay = '2';
     header("refresh: $delay url = $target");
     exit();
 }
